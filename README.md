@@ -14,3 +14,4 @@ pnpm create cloudflare@latest --template github:joshnuss/partyvite-svelte
 - Change the name of the package (in `package.json`)
 - Change the name of the worker (in `wrangler.json`)
 - Change the title of the page in `index.html`
+- Run `pnpm run deploy` to deploy
