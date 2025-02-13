@@ -3,8 +3,10 @@ import { Connection, Server, routePartykitRequest } from "partyserver"
 type Env = {}
 
 export class MyServer extends Server<Env> {
-  onMessage(connection: Connection<unknown>, message: string) {
+  onMessage(conn: Connection<unknown>, message: string) {
     console.log("message from client:", message)
+
+    conn.send('hello from server')
   }
 }
 

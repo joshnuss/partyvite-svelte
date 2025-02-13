@@ -1,9 +1,9 @@
 <script lang="ts">
   import svelteLogo from './assets/svelte.svg'
+  import partykitLogo from './assets/partykit.png'
   import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
   import PartySocket from 'partysocket'
-  import { onDestroy } from 'svelte'
+  import { onMount } from 'svelte'
 
   const ws = new PartySocket({
     host: 'localhost:5173',
@@ -11,21 +11,21 @@
     party: 'my-server',
   })
 
-  ws.send('hello from the client!')
-
   const controller = new AbortController()
 
-  ws.addEventListener(
-    'message',
-    (message) => {
-      console.log('message from server:', message.data)
-    },
-    controller,
-  )
+  let message = $state()
 
-  onDestroy(() => {
-    controller.abort()
+  onMount(() => {
+    ws.addEventListener('message', onMessage, controller)
+
+    ws.send('hello from the client!')
+
+    return () => controller.abort()
   })
+
+  function onMessage(event: MessageEvent) {
+    message = event.data
+  }
 </script>
 
 <main>
@@ -36,20 +36,19 @@
     <a href="https://svelte.dev" target="_blank" rel="noreferrer">
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
+    <a href="https://partykit.io" target="_blank" rel="noreferrer">
+      <img src={partykitLogo} class="logo" alt="PartyKit Logo" />
+    </a>
   </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
+  <h1>Vite + Svelte + PartyKit</h1>
 
   <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
+    Click on the PartyKit, Vite and Svelte logos to learn more
   </p>
+
+  <div class="card">
+    {message}
+  </div>
 </main>
 
 <style>
