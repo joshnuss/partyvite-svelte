@@ -3,7 +3,7 @@ partyvite-svelte
 
 A (beta) starter template for 🎈 partyserver ⨉ ⚡️ vite ⨉ 🧡 svelte ⨉ ⛅️ cloudflare workers
 
-A Vue adaptation of Sunil Pai's [partyvite] (https://github.com/threepointone/partyvite) & (https://github.com/franciscohermida/partyvite-vue) starter templates.
+A Svelte adaptation of Sunil Pai's [partyvite](https://github.com/threepointone/partyvite) & [partyvite-vue](https://github.com/franciscohermida/partyvite-vue) starter templates.
 
 ```sh
 pnpm create cloudflare@latest -- --template joshnuss/partyvite-svelte
