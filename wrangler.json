@@ -1,0 +1,22 @@
+{
+  "name": "my-party-server",
+  "main": "./src/server.ts",
+  "compatibility_date": "2025-02-04",
+  "assets": {
+    "directory": "./public"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MyServer",
+        "class_name": "MyServer"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["MyServer"]
+    }
+  ]
+}
