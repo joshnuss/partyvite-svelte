@@ -5,9 +5,8 @@
   import PartySocket from 'partysocket'
   import { onMount } from 'svelte'
 
-  const url = new URL(window.location.href)
   const ws = new PartySocket({
-    host: url.host,
+    host: window.location.host,
     room: 'room1',
     party: 'my-server',
   })
