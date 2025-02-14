@@ -5,7 +5,7 @@ type Env = {
 }
 
 export class MyServer extends Server<Env> {
-  onMessage(conn: Connection<unknown>, message: string) {
+  onMessage(conn: Connection, message: string) {
     console.log("message from client:", message)
 
     conn.send('hello from server')
