@@ -1,6 +1,6 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import partykitLogo from './assets/partykit.png'
+  import svelteLogo from './svelte.svg'
+  import partykitLogo from './partykit.png'
   import viteLogo from '/vite.svg'
   import PartySocket from 'partysocket'
   import { onMount } from 'svelte'
