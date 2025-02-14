@@ -1,6 +1,6 @@
 {
   "name": "my-party-server",
-  "main": "./src/server.ts",
+  "main": "./worker/server.ts",
   "compatibility_date": "2025-02-04",
   "assets": {
     "directory": "./public"
