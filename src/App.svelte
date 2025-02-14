@@ -5,22 +5,18 @@
   import PartySocket from 'partysocket'
   import { onMount } from 'svelte'
 
+  const url = new URL(window.location.href)
   const ws = new PartySocket({
-    host: 'localhost:5173',
+    host: url.host,
     room: 'room1',
     party: 'my-server',
   })
 
-  const controller = new AbortController()
-
   let message = $state()
 
   onMount(() => {
-    ws.addEventListener('message', onMessage, controller)
-
+    ws.addEventListener('message', onMessage)
     ws.send('hello from the client!')
-
-    return () => controller.abort()
   })
 
   function onMessage(event: MessageEvent) {
