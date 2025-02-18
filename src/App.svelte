@@ -1,7 +1,4 @@
 <script lang="ts">
-  import svelteLogo from './svelte.svg'
-  import partykitLogo from './partykit.png'
-  import viteLogo from '/vite.svg'
   import PartySocket from 'partysocket'
   import { onMount } from 'svelte'
 
@@ -26,13 +23,13 @@
 <main>
   <div>
     <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
+      <img src='/vite.svg' class="logo" alt="Vite Logo" />
     </a>
     <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
+      <img src='/svelte.svg' class="logo svelte" alt="Svelte Logo" />
     </a>
     <a href="https://partykit.io" target="_blank" rel="noreferrer">
-      <img src={partykitLogo} class="logo" alt="PartyKit Logo" />
+      <img src='/partykit.png' class="logo" alt="PartyKit Logo" />
     </a>
   </div>
   <h1>Vite + Svelte + PartyKit</h1>
