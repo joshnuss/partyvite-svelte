@@ -19,5 +19,5 @@
       "vite/client"
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte.js", "src/**/*.svelte"]
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte.js", "src/**/*.svelte", "shared/**/*.ts"]
 }
